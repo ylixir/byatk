@@ -99,7 +99,10 @@ Even though these are technically SMD parts, I had little trouble soldering them
 # Resistor
 The resistor is the round stripped component. Probably beige or blue in color.
 It goes in the place on your board labelled R1.
-Orientation doesn't matter and you can put it on the top or bottom of your board as you please. See bottom right in the image.
+Orientation doesn't matter and you can put it on the top or bottom of your board as you please.
+Simply bend the wires coming out of the resistor 90 degrees and then push them through the holes to either side of the R1 label.
+Solder the side with the wires sticking out, and then snip the wires.
+See bottom right in the image.
 ![](images/resistor.jpg)
 
 # Lighting Test
@@ -125,9 +128,69 @@ If have any problems they should be pretty easy to spot.
 Most likely you just forgot to solder a connection, or you have a weak solder joint.
 Do not be discouraged. Just fix it up and try again.
 ![](images/light_test_success.jpg)
-![](images/great_success.jpg)
 
 # Diodes
+![](images/diode_orientation.jpg)
+The diodes orientation does matter.
+Each diode has a stripe on one end.
+If you look on the circuit board, then you will see that the spots for the diodes (D1, D2,...D29, D30) have a drawing of the diode with a matching stripe.
+Bend the wires as you did with the resistor and place the diodes, ensuring that the stripe on the diode faces the same direction as the stripe on the board.
+Top or bottom, it doesn't matter.
+![](images/placing_diodes.jpg)
+You can bend the wires out a bit after you stick them through so the diode stays in place.
+This way you can place all the diodes at once, and then solder them all at once rather than doing one at a time.
+
+If you are using a micro usb controller instead of a mini usb controller, then be sure to save the snipped diode pins.
+You will need them for the next step.
+![](images/placing_diodes2.jpg)
+
 # Pro Micro pins
+The thing that is tricky here is that there are some switches _under_ the microcontroller.
+So if you put on the microcontroller first, then you can't get the switches soldered, but if you solder the switches on, then you can't get to the pins on the top of the circuit board.
+The solution is to solder the pins to the controller first, then the switches, then the controller itself.
+
+If you have a micro usb controller, then the headers pins that come with it will be too thick.
+The diode wires however work great!
+Now is a good time to snap your switches into the top plate.
+You can fit the top and middle pieces together and get the controller as close to the switch pins as possible to make sure you have enough clearance below the controller to place the bottom place on.
+![](images/placing_pins.jpg)
+![](images/placing_pins3.jpg)
+
+Once you've soldered the pins to the circuit board, then you can straighten them from the controller up.
+This will release the controller so that you can solder the switches on.
+![](images/straighten_pins.jpg)
+![](images/straighten_pins2.jpg)
+
 # Switches
+This may be the most significant step.
+You must snap the switches into the top plate, and then solder them to the circuit board.
+This permanantly affixes your top plate to the circuit board!
+There is no going back from this, triple check your diodes to make sure they are correct.
+
 # Pro Micro
+This is the final soldering step.
+Before you solder the controller on, be sure to take note of the RST and GND pins.
+You'll need to know where they are to put firmware on the thing.
+Make sure you measure carefully!
+I didn't and I wound up wrecking one of my controller pins trying to fix it.
+Now I have a crappy patch wire, and I have to maintain a separate branch of firmware just for this one board.
+![](images/measure_fail.jpg)
+Don't be like me.
+You can fit the top and bottom pieces together and use the standoffs to make sure you have enough clearance below the controller to place the bottom place on.
+![](images/measure_pins.jpg)
+![](images/measure_pins2.jpg)
+
+# Final Steps
+Now that you've clipped the pins off of the controller and screwed the bottom plate and standoffs on, you only need to flash the controller with the keyboard firmware.
+
+You may flash your microcontroller with the default QMK firmware [here](bin/tomato_default.hex).
+Refer to the [Lighting Test](#lighting-test) section for instructions to flash firmware files.
+
+QMK has a feature to bind a key on your board to put it in "bootloader" mode so that you can install firmware.
+As of this writing, that feature is broken :-(
+If you wanna get fancy, you can attach a switch to the reset and ground pins, so that you can flash new firmware.
+If you are like me, you can just shove a screwdriver in there and short them out.
+
+![](images/great_success.jpg)
+
+See [QMK](https://www.qmk.fm) and it's [documentation](https://docs.qmk.fm) for more information.
