@@ -2,7 +2,7 @@
 Build You A Tomato Keyboard!
 
 in which we build a ortholinear 30% keyboard with fully programmable RGB backlighting.
-This keyboard is a variant of the (relatively) famous Gherkin keboard.
+[This keyboard](http://www.40percent.club/2017/07/tomato-in-gherkin.html) is a variant of the (relatively) famous Gherkin keboard.
 
 ![Finished](images/finished.jpg)
 
