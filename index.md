@@ -171,6 +171,7 @@ There is no going back from this, triple check your diodes to make sure they are
 This is the final soldering step.
 Before you solder the controller on, be sure to take note of the RST and GND pins.
 You'll need to know where they are to put firmware on the thing.
+
 Make sure you measure carefully!
 I didn't and I wound up wrecking one of my controller pins trying to fix it.
 Now I have a crappy patch wire, and I have to maintain a separate branch of firmware just for this one board.
