@@ -194,4 +194,4 @@ If you are like me, you can just shove a screwdriver in there and short them out
 
 ![](images/great_success.jpg)
 
-See [QMK](https://www.qmk.fm) and it's [documentation](https://docs.qmk.fm) for more information.
+See [QMK](http://qmk.fm) and it's [documentation](https://docs.qmk.fm) for more information.
